@@ -9,9 +9,15 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style/font.css">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/mobile.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="js/aos.css">
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"
+        integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=5rkl30wkd1&amp;submodules=panorama"></script>
+    <script src="js/aos.js"></script>
     <script src="js/main.js"></script>
 </head>
 
@@ -25,6 +31,9 @@
                         <img src="" alt="검색결과에 노출될 수 있는 텍스트임">
                     </a>
                 </h1>
+                <button class="btn-nav-opn">
+                    <span></span>
+                </button>
                 <nav>
                     <ul class="gnb">
                         <li><a href="#">About</a></li>
@@ -38,9 +47,18 @@
             <section class="sec sec1 main-visual">
                 <div class="main-content">
                     <h2>
-                        새로운 도전과 시작에<br /> 석현애드가 동참하겠습니다.<br />
+                        <!-- 새로운 도전과 시작에<br /> <span>석현애드</span>가 동참하겠습니다.<br /> -->
+                        <div>새로운 도전과 시작에</div>
+                        <div>
+                            <p>석현애드<span></span></p>가 동참하겠습니다.
+                            <script>
+                                setTimeout(function () {
+                                    $(".main-content h2 p").addClass("float")
+                                }, 400);
+                            </script>
+                        </div>
                     </h2>
-                    <p>
+                    <p data-aos="fade-up" data-aos-duration="1000">
                         대중들의 관심은 50%의 비중으로 가게 입구에서 결정된다고 합니다. 석현애드는 MZ세대의 감상으로 최고의 컨설팅과 시대에 발 맞춘 디자인 콘셉트를 제안하며 경쟁 가게와
                         차별화된, 오로지 나만의 맞춤 간판 제작을 지향하고 있습니다.
                     </p>
@@ -50,7 +68,8 @@
                         <div class="title-content">
                             <h3>PROJECTS</h3>
                             <h4>
-                                석현애드는 오늘도 여러분들의<br />모든 시작과 함께하고 있습니다.
+                                <p><span>석현애드는 오늘도 여러분들의</span></p>
+                                <p><span>모든 시작과 함께하고 있습니다.</span></p>
                             </h4>
                             <ul class="arrow">
                                 <li>
@@ -141,6 +160,7 @@
                     </h2>
                     <article class="about-context">
                         <div class="copyright">
+                            <h3>ABOUT</h3>
                             <div class="main-copy">
                                 섬세한 컨설팅과 차별화된 퀄리티를 약속합니다.
                             </div>
@@ -188,12 +208,32 @@
                     <h3>GALLERY</h3>
                     <div class="gallery-slider">
                         <div class="gallery-item">
-                            <div class="img-view"></div>
+                            <div class="img-view swiper mySwiper">
+                                <div class="track swiper-wrapper">
+                                    <div class="slide swiper-slide">
+                                        <img src="images/gallery1.jpeg" alt="">
+                                    </div>
+                                    <div class="slide swiper-slide">
+                                        <img src="images/gallery2.jpeg" alt="">
+                                    </div>
+                                    <div class="slide swiper-slide">
+                                        <img src="images/gallery3.jpeg" alt="">
+                                    </div>
+                                    <div class="slide swiper-slide">
+                                        <img src="images/gallery4.jpeg" alt="">
+                                    </div>
+                                    <div class="slide swiper-slide">
+                                        <img src="images/gallery5.jpeg" alt="">
+                                    </div>
+                                </div>
+                            </div>
                             <div class="item-info">
-                                <p class="img-description">Text for Description About The Image</p>
+                                <div class="desc">
+                                    <p class="img-description">Text for Description About The Image</p>
+                                </div>
                                 <ul class="arrow">
-                                    <li>
-                                        <button>
+                                    <li class="btn-prev">
+                                        <button class="swiper-button-prev">
                                             <svg style="transform: rotate(180deg);" xmlns="http://www.w3.org/2000/svg"
                                                 height="24px" viewBox="0 0 24 24" width="24px" fill="#3f3f3f">
                                                 <path d="M0 0h24v24H0V0z" fill="none" />
@@ -201,8 +241,8 @@
                                             </svg>
                                         </button>
                                     </li>
-                                    <li>
-                                        <button>
+                                    <li class="btn-next">
+                                        <button class="swiper-button-next">
                                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24"
                                                 width="24px" fill="#3f3f3f">
                                                 <path d="M0 0h24v24H0V0z" fill="none" />
@@ -224,10 +264,18 @@
                             석현애드는 언제나<br />
                             여러분들의 곁에서 함께합니다.
                         </div>
+                        <div class="naver-map-link">
+                            <a href="#">
+                                네이버 지도에서 보기
+                            </a>
+                        </div>
                     </article>
-                    <figure class="naver-map-api"></figure>
+                    <figure class="naver-map-api">
+                        <div id="map"></div>
+                    </figure>
                 </div>
             </section>
+            <script src="js/map-api.js"></script>
         </main>
         <footer>
             <div class="wrap">

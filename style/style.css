@@ -7,7 +7,10 @@ button,input,select{border: 0; background-color: rgba(255,255,255,0); padding: 0
     box-sizing: border-box;
 }
 
-#wrapper{}
+#wrapper{
+    max-width: 1920px;
+    margin: 0 auto;
+}
 
 header{height: 110px;}
 header .wrap{width: 1340px; margin: 0 auto; height: 100%; display: flex; align-items: center; position: relative;}
@@ -15,6 +18,7 @@ header .wrap h1{
     
 }
 header .wrap h1 img{display: none;}
+header .wrap .btn-nav-opn{display: none;}
 header .wrap nav{display: flex;
     align-items: center;
     justify-content: center;
@@ -31,6 +35,18 @@ header .wrap nav .gnb{
 header .wrap nav .gnb li{
     margin: 0 35px;
     font-size: 18px;
+    position: relative;
+}
+header .wrap nav .gnb li::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background-color: #000;
+    transition: width 0.3s;
+}
+header .wrap nav .gnb li:hover::after{
+    width: 100%;
 }
 section.sec1 .main-content{
     padding: 120px 0 90px;
@@ -40,8 +56,48 @@ section.sec1 .main-content{
     justify-content: space-between;
     align-items: center;
 }
-section.sec1 .main-content h2{font-size: 54px; font-weight: 600; line-height: 1.1;}
-section.sec1 .main-content p{
+section.sec1 .main-content h2{font-size: 54px; font-weight: 600; line-height: 1.2;}
+/* section.sec1 .main-content h2 span{background-color: #000; color: #fff;} */
+section.sec1 .main-content h2 div{}
+section.sec1 .main-content h2 div p{
+    color: rgba(255,255,255,0);
+    display: inline-block;
+    position: relative;
+}
+section.sec1 .main-content h2 div p span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+section.sec1 .main-content h2 div p span::before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    animation: text-slide 0.4s;
+}
+section.sec1 .main-content h2 div p span::after{
+    content: '석현애드';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s;
+    transition-delay: 0.3s;
+    transform: translateY(100%);
+    color: #fff;
+}
+section.sec1 .main-content h2 div p.float span::after{
+    transform: translateY(0);
+}
+@keyframes text-slide {
+    0%{width: 0%;} 
+    100%{width: 100%;} 
+}
+section.sec1 .main-content > p{
     font-size: 18px;
     width: 400px;
     line-height: 1.3;
@@ -125,6 +181,17 @@ section.sec1 .prj-preview .project-more .btn-txt{
     color: #fff;
     margin-right: 9px;
 }
+section.sec1 .prj-preview .project-more .btn-txt::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background-color: #fff;
+    transition: width 0.3s;
+}
+section.sec1 .prj-preview .project-more .btn-txt:hover::after{
+    width: 100%;
+}
 section.sec1 .prj-preview .slider-wrap{
     background-color: #F0F0F0;
     width: calc((100% - 1340px) / 2 + 990px);
@@ -154,12 +221,17 @@ section.sec2 .wrap{
 section.sec2 .wrap h2{font-size: 75px;}
 section.sec2 .wrap h2 .sticky{
     position: sticky;
-    top: 0;
+    top: 36px;
     left: 0;
     padding-bottom: 330px;
 }
 section.sec2 .wrap .about-context{
     width: 936px;
+}
+section.sec2 .wrap .about-context h3{
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 24px;
 }
 section.sec2 .wrap .about-context .copyright{
     padding-bottom: 75px;
@@ -215,16 +287,23 @@ section.sec3 .wrap h3{
     font-weight: 500;
     margin-bottom: 24px;
 }
-section.sec3 .wrap .gallery-slider{
-    
-}
-section.sec3 .wrap .gallery-item{
-    
-}
 section.sec3 .wrap .gallery-item .img-view{
     width: 100%;
     height: 540px;
     background-color: #444;
+    overflow: hidden;
+}
+section.sec3 .wrap .gallery-item .img-view .track{
+}
+section.sec3 .wrap .gallery-item .img-view .track .slide{
+    width: 100%;
+    height: 100%;
+}
+section.sec3 .wrap .gallery-item .img-view .track .slide img{
+    object-fit: cover;
+    width: 100%;
+    object-position: center center;
+    height: 540px;
 }
 section.sec3 .wrap .gallery-item .item-info{
     display: flex;
@@ -242,7 +321,18 @@ section.sec3 .wrap .gallery-item .item-info .arrow{
 section.sec3 .wrap .gallery-item .item-info .arrow li{
     margin-left: 18px;
 }
-
+section.sec3 .wrap .gallery-item .item-info .arrow li button{
+    cursor: pointer;
+    position: unset;
+    left: unset;
+    right: unset;
+    width: unset;
+    height: unset;
+}
+section.sec3 .wrap .gallery-item .item-info .arrow li button::before,
+section.sec3 .wrap .gallery-item .item-info .arrow li button::after{
+    content: none;
+}
 section.sec4{
     background-color: #000;
     padding: 114px 0;
@@ -268,6 +358,11 @@ section.sec4 .wrap .contact-text .text{
     color: #fff;
     font-weight: 500;
     line-height: 1.3;
+}
+section.sec4 .wrap .contact-text .naver-map-link{
+    color: #fff;
+    margin-top: 54px;
+    text-decoration: underline;
 }
 section.sec4 .wrap .naver-map-api{
     width: 800px;
