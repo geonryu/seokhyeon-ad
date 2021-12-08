@@ -22,9 +22,6 @@ $(document).ready(function () {
         $(this).toggleClass("open");
         let active = $(this).hasClass("open");
 
-        
-        
-
         if(active) { 
             $("nav").stop().fadeIn();
             $("nav .gnb").addClass("active");
@@ -87,6 +84,10 @@ $(document).ready(function () {
             $(".btn-nav-opn").removeClass("open");
         } else if(winWidth >= 1340 && !navClass) {
             $("nav").css("display","flex");
+            $("body").css({
+                "height" : "auto",
+                "overflow" : "auto"
+            });
         } else if(winWidth < 1340 && !navClass) {
             $("nav").css("display","none");
         } 
