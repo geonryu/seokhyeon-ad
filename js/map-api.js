@@ -1,4 +1,6 @@
-const appID = "5rkl30wkd1"
+var mapOptions = {
+    center: new naver.maps.LatLng(37.3595704, 127.105399),
+    zoom: 10
+};
 
-var mapDiv = document.getElementById('map'); 
-var map = new naver.maps.Map(mapDiv);
+var map = new naver.maps.Map('map', mapOptions);
