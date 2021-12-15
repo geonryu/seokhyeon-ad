@@ -1,7 +1,7 @@
-@media all and (max-width: 1339.999px){
+@media all and (max-width: 83.749938rem){
     html{font-size: 3.8vw;}
     #wrapper{
-        max-width: 1339.999px;
+        max-width: 83.749938rem;
     }
 
     header{
@@ -14,8 +14,9 @@
     }
     header .wrap h1{
         position: absolute;
-        top: 1.875rem;
+        top: 1.125rem;
         font-size: 2.25rem;
+        height: 5.625rem;
     }
     header .wrap .btn-nav-opn{
         display: block;
