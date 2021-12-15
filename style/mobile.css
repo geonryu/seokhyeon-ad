@@ -73,6 +73,19 @@
         z-index: 100;
         overflow: hidden scroll;
     }
+    header .wrap nav .call{
+        padding: .9375rem 0;
+        background-color: #004f9f;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: unset;
+        font-size: 1.5rem;
+    }
+    header .wrap nav .call i{margin-right: .5625rem;}
     header .wrap nav .gnb{
         flex-direction: column;
         align-items: center;
@@ -118,7 +131,6 @@
         padding: unset;
     }
     section.sec1 .prj-preview .title{
-        background-color: #3F3F3F;
         padding: 2.25rem 5%;
         display: block;
         width: unset;
@@ -278,7 +290,6 @@
     }  
 
     section.sec4{
-        background-color: #000;
         padding: 2.25rem 5%;
     }
     section.sec4 .wrap{
