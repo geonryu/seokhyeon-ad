@@ -15,9 +15,15 @@ button,input,select{border: 0; background-color: rgba(255,255,255,0); padding: 0
 header{height: 110px;}
 header .wrap{width: 1340px; margin: 0 auto; height: 100%; display: flex; align-items: center; position: relative;}
 header .wrap h1{
-    
+    height: 100%;
 }
-header .wrap h1 img{display: none;}
+header .wrap h1 a{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+}
+header .wrap h1 img{height: 50%;}
 header .wrap .btn-nav-opn{display: none;}
 header .wrap nav{display: flex;
     align-items: center;
@@ -77,11 +83,11 @@ section.sec1 .main-content h2 div p span::before{
     display: block;
     width: 100%;
     height: 100%;
-    background-color: #000;
+    background-color: #004f9f;
     animation: text-slide 0.4s;
 }
 section.sec1 .main-content h2 div p span::after{
-    content: '석현애드';
+    content: '애드강츠비';
     position: absolute;
     top: 0;
     left: 0;
@@ -110,7 +116,7 @@ section.sec1 .prj-preview{
     margin: 0 auto;
 }
 section.sec1 .prj-preview .title{
-    background-color: #3F3F3F;
+    background-color: #004f9f;
     display: flex;
     justify-content: flex-end;
     width: calc((100% - 1340px) / 2 + 350px);
@@ -225,6 +231,9 @@ section.sec2 .wrap h2 .sticky{
     left: 0;
     padding-bottom: 330px;
 }
+section.sec2 .wrap h2 .sticky img{
+    width: 230px;
+}
 section.sec2 .wrap .about-context{
     width: 936px;
 }
@@ -334,7 +343,7 @@ section.sec3 .wrap .gallery-item .item-info .arrow li button::after{
     content: none;
 }
 section.sec4{
-    background-color: #000;
+    background-color: #004f9f;
     padding: 114px 0;
 }
 section.sec4 .wrap{
@@ -367,7 +376,8 @@ section.sec4 .wrap .contact-text .naver-map-link{
 section.sec4 .wrap .naver-map-api{
     width: 800px;
     height: 420px;
-    background-color: #444;
+    background-color: #004f9f;
+    color: #fff;
 }
 section.sec4 .wrap .naver-map-api #map{
     width: 100%;
@@ -377,7 +387,7 @@ section.sec4 .wrap .naver-map-api #map{
 footer{
     height: 365px;
     padding: 78px 0 0 0;
-    font-size: 15px;
+    font-size: 15px;;
 }
 footer .wrap{
     margin: 0 auto;
