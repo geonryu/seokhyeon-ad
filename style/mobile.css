@@ -71,19 +71,16 @@
         height: 100%;
         background-color: rgba(255,255,255,0.95);
         z-index: 100;
-        overflow: hidden scroll;
     }
     header .wrap nav .call{
-        padding: .9375rem 0;
+        padding: .5rem 0;
         background-color: #004f9f;
         width: 100%;
         text-align: center;
         color: #fff;
-        position: absolute;
-        right: 0;
-        top: 0;
+        position: unset;
         transform: unset;
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
     header .wrap nav .call i{margin-right: .5625rem;}
     header .wrap nav .gnb{
@@ -91,12 +88,14 @@
         align-items: center;
         justify-content: center;
         height: 100%;
+        overflow: scroll;
     }
     header .wrap nav .gnb li{
-        margin-bottom: 3.375rem;
+        margin-bottom: 6vh;
         font-size: 2.25rem;
         font-weight: 500;
     }
+    header .wrap nav .gnb li:last-child{margin-bottom: 0;}
     header .wrap nav .gnb li a{
         display: block;
         opacity: 0;
