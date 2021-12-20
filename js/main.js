@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var swiper = new Swiper(".main-visual .mySwiper", {
+    var swiperMain = new Swiper(".main-visual .mySwiper", {
         slidesPerView: "auto",
         spaceBetween: 30,
         freeMode: true,
@@ -63,7 +63,7 @@ $(document).ready(function () {
         }
     });
 
-    var swiper = new Swiper(".gallery .mySwiper", {
+    var swiperGallery = new Swiper(".gallery .mySwiper", {
         slidesPerView: 1,
         loop: true,
         navigation: {
@@ -73,6 +73,13 @@ $(document).ready(function () {
         autoplay: {
             delay: 4500,
             disableOnInteraction: false,
+        },
+        on: {
+            slideChangeTransitionStart: function () {
+                var i = $(".gallery .swiper-slide-active").attr("data-swiper-slide-index");
+                console.log(i)
+                $(".gallery .item-info p").eq(i).stop().fadeIn().siblings().stop().fadeOut();
+            }
         }
     });
 
@@ -92,12 +99,6 @@ $(document).ready(function () {
             $("nav").css("display","none");
         } 
     })
-
-    // 페이지 연결 준비중
-    $(".project-more a").on("click", function(e) {
-        e.preventDefault();
-        alert("페이지 준비중입니다.");
-    });
 
     AOS.init();
 })
